@@ -16,8 +16,15 @@
 }
 
 .menu-list {
+    height: 40px;
+    width: 100%;
     display: flex;
-    padding: 0 20px;
+    align-items: center;
+    position: relative;
+    padding: 1rem;
+    background-color: #fff;
+    color: black;
+    box-shadow: 0 2px 2px 2px rgba(9, 9, 9, 0.23);
 }
 
 .menu-list-item:hover + .menu-list-sublist,
@@ -30,4 +37,59 @@
 
 .menu-list-sublist {
     display: none;
+}
+
+.hamburger {
+    border: 0;
+    height: 40px;
+    width: 40px;
+    padding: 0.5rem;
+    border-radius: 50%;
+    background-color: deepskyblue;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+    position: absolute;
+    top: 15px;
+    right: 30px;
+    display: none;
+}
+
+@media screen and (max-width: 768px) {
+    .hamburger {
+        display: block;
+    }
+
+    .menu-list {
+        display: none;
+        position: absolute;
+        top: 55px;
+        left: 0;
+        flex-direction: column;
+        width: 100%;
+        height: calc(100vh - 77px);
+        background-color: white;
+        border-top: 1px solid black;
+    }
+
+    .menu-list.expanded {
+        display: block;
+    }
+
+    .menu-list-item-container {
+        width: 100%;
+        text-align: center;
+        margin: 0;
+    }
+
+    .menu-list-item:hover + .menu-list-sublist,
+    .menu-list-sublist {
+        display: none;
+    }
+
+    .menu-list-item:hover + .menu-list-sublist.expanded,
+    .menu-list-sublist.expanded {
+        display: block;
+        position: relative;
+        padding: 0;
+    }
 }
