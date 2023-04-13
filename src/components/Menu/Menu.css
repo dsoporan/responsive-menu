@@ -1,0 +1,33 @@
+.menu-list-item {
+    list-style: none;
+    line-height: 40px;
+    padding: 0 8px;
+    cursor: pointer;
+}
+
+.menu-list-sublist {
+    background-color: lightyellow;
+    color: black;
+}
+
+.subitem {
+    margin: 0;
+    padding: 0 8px;
+}
+
+.menu-list {
+    display: flex;
+    padding: 0 20px;
+}
+
+.menu-list-item:hover + .menu-list-sublist,
+.menu-list-sublist:hover {
+    display: block;
+    padding: 0;
+    z-index: 9;
+    position: absolute;
+}
+
+.menu-list-sublist {
+    display: none;
+}
